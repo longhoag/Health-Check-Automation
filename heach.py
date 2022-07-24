@@ -56,7 +56,7 @@ def health_check():
     check.click()
 
 # Runs Automatic Health Check Program every day at 12:10 AM
-schedule.every().day.at('00:53').do(health_check)
+schedule.every().day.at('00:10').do(health_check)
 while True:
     schedule.run_pending()
     time.sleep(1)
