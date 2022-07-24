@@ -7,7 +7,7 @@ import schedule
 import time
 
 def health_check():
-    PATH = "/Users/Leo/Developer/chromedriver"
+    PATH = "path/to/chromedriver"
     driver = webdriver.Chrome(PATH)
 
     driver.get("https://myclu.callutheran.edu/health-check/?_=1")
@@ -17,8 +17,8 @@ def health_check():
     password = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="frmLogin_Password"]')))
     submit = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="btnLogin"]')))
 
-    username.send_keys('longhoang')
-    password.send_keys('hRvdLog25StF-UpeNn')
+    username.send_keys('username')
+    password.send_keys('password')
 
     driver.implicitly_wait(100)
     submit.click()
